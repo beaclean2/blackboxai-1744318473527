@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pizza Paradise</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Admin Dashboard Layout -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-red-500">Pizza Paradise</h1>
+                <p class="text-sm text-gray-400">Admin Dashboard</p>
+            </div>
+            
+            <nav class="mt-6">
+                <div class="px-4 py-2 text-xs text-gray-400 uppercase">Main</div>
+                <a href="#dashboard" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-tachometer-alt w-5"></i>
+                    <span class="ml-3">Dashboard</span>
+                </a>
+                <a href="#orders" class="flex items-center px-4 py-3 bg-gray-700 text-white">
+                    <i class="fas fa-shopping-cart w-5"></i>
+                    <span class="ml-3">Orders</span>
+                </a>
+                <a href="#menu" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-pizza-slice w-5"></i>
+                    <span class="ml-3">Menu Items</span>
+                </a>
+                <a href="#customers" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-users w-5"></i>
+                    <span class="ml-3">Customers</span>
+                </a>
+                
+                <div class="px-4 py-2 mt-6 text-xs text-gray-400 uppercase">Settings</div>
+                <a href="#profile" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-user w-5"></i>
+                    <span class="ml-3">Profile</span>
+                </a>
+                <a href="login.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-sign-out-alt w-5"></i>
+                    <span class="ml-3">Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Orders</h2>
+                    <div class="flex items-center">
+                        <button class="text-gray-500 hover:text-gray-600">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                        <div class="ml-6 relative">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" 
+                                 alt="Admin" 
+                                 class="w-8 h-8 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-red-100 text-red-600">
+                                <i class="fas fa-shopping-cart text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Total Orders</h3>
+                                <p class="text-2xl font-semibold">156</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <i class="fas fa-dollar-sign text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Revenue</h3>
+                                <p class="text-2xl font-semibold">$3,245</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Customers</h3>
+                                <p class="text-2xl font-semibold">1,026</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-star text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Avg. Rating</h3>
+                                <p class="text-2xl font-semibold">4.8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="bg-white rounded-lg shadow-sm mb-6">
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-800">Recent Orders</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-gray-50 text-left">
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Order ID</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Customer</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Items</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Total</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Status</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="px-6 py-4">#12345</td>
+                                    <td class="px-6 py-4">John Doe</td>
+                                    <td class="px-6 py-4">2x Margherita, 1x Pepperoni</td>
+                                    <td class="px-6 py-4">$42.97</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-semibold text-green-600 bg-green-100 rounded-full">
+                                            Delivered
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-blue-600 hover:text-blue-800">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4">#12344</td>
+                                    <td class="px-6 py-4">Jane Smith</td>
+                                    <td class="px-6 py-4">1x Veggie Supreme</td>
+                                    <td class="px-6 py-4">$18.99</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-semibold text-yellow-600 bg-yellow-100 rounded-full">
+                                            In Progress
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-blue-600 hover:text-blue-800">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4">#12343</td>
+                                    <td class="px-6 py-4">Mike Johnson</td>
+                                    <td class="px-6 py-4">3x Hawaiian</td>
+                                    <td class="px-6 py-4">$56.97</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">
+                                            Cancelled
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-blue-600 hover:text-blue-800">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Popular Items -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-800">Popular Items</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center">
+                                    <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg" 
+                                         alt="Margherita" 
+                                         class="w-16 h-16 rounded object-cover">
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold">Margherita</h4>
+                                        <p class="text-sm text-gray-500">Orders: 89</p>
+                                        <p class="text-sm font-semibold text-red-600">$14.99</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center">
+                                    <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" 
+                                         alt="Pepperoni" 
+                                         class="w-16 h-16 rounded object-cover">
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold">Pepperoni</h4>
+                                        <p class="text-sm text-gray-500">Orders: 76</p>
+                                        <p class="text-sm font-semibold text-red-600">$16.99</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center">
+                                    <img src="https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg" 
+                                         alt="Veggie Supreme" 
+                                         class="w-16 h-16 rounded object-cover">
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold">Veggie Supreme</h4>
+                                        <p class="text-sm text-gray-500">Orders: 65</p>
+                                        <p class="text-sm font-semibold text-red-600">$15.99</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Admin Dashboard Specific JavaScript -->
+    <script>
+        // Sidebar Navigation
+        document.querySelectorAll('aside a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === 'login.html') return;
+                
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('aside a').forEach(l => {
+                    l.classList.remove('bg-gray-700', 'text-white');
+                    l.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+                });
+                
+                // Add active class to clicked link
+                this.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+                this.classList.add('bg-gray-700', 'text-white');
+            });
+        });
+
+        // Notification Button
+        document.querySelector('button i.fa-bell').addEventListener('click', function() {
+            alert('No new notifications');
+        });
+
+        // View Order Buttons
+        document.querySelectorAll('button.text-blue-600').forEach(button => {
+            button.addEventListener('click', function() {
+                const orderId = this.closest('tr').querySelector('td').textContent;
+                alert(`Viewing order ${orderId}`);
+            });
+        });
+    </script>
+</body>
+</html>
