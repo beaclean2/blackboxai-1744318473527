@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pizza Paradise</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-red-600">
+                    <a href="index.html">Pizza Paradise</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600">Home</a>
+                    <a href="menu.html" class="text-gray-600 hover:text-red-600">Menu</a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600">Order</a>
+                    <a href="track-order.html" class="text-gray-600 hover:text-red-600">Track Order</a>
+                    <a href="about.html" class="text-red-600 font-medium">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Login/Cart -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-red-600">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600 relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-20 relative">
+        <div class="h-[400px] relative">
+            <img src="https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg" 
+                 alt="Pizza Making" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white text-center">Our Story</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Our Story -->
+            <div class="max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-6">The Pizza Paradise Story</h2>
+                <p class="text-gray-600 mb-4">
+                    Founded in 1995, Pizza Paradise began with a simple mission: to create the perfect pizza using only the finest ingredients and traditional techniques passed down through generations. What started as a small family-owned pizzeria has grown into a beloved establishment, serving thousands of happy customers while maintaining the same dedication to quality and authenticity.
+                </p>
+                <p class="text-gray-600">
+                    Our secret lies in our commitment to excellence - from our hand-kneaded dough made fresh daily to our signature sauce crafted from Italian tomatoes. Every pizza that leaves our kitchen is a testament to our passion for great food and exceptional service.
+                </p>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Quality -->
+                <div class="text-center">
+                    <div class="bg-red-100 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-award text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Quality Ingredients</h3>
+                    <p class="text-gray-600">We source only the finest ingredients, from fresh local produce to premium imported Italian cheese.</p>
+                </div>
+
+                <!-- Tradition -->
+                <div class="text-center">
+                    <div class="bg-red-100 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-history text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Traditional Methods</h3>
+                    <p class="text-gray-600">Our pizzas are crafted using time-honored techniques, ensuring authentic taste in every bite.</p>
+                </div>
+
+                <!-- Service -->
+                <div class="text-center">
+                    <div class="bg-red-100 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-heart text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Customer First</h3>
+                    <p class="text-gray-600">We believe in creating memorable experiences through exceptional service and hospitality.</p>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center">
+                        <img src="https://images.pexels.com/photos/887827/pexels-photo-887827.jpeg" 
+                             alt="Chef John" 
+                             class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold">Chef John</h3>
+                        <p class="text-gray-600">Master Pizza Chef</p>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="text-center">
+                        <img src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg" 
+                             alt="Maria" 
+                             class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold">Maria</h3>
+                        <p class="text-gray-600">Head of Operations</p>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="text-center">
+                        <img src="https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg" 
+                             alt="David" 
+                             class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold">David</h3>
+                        <p class="text-gray-600">Customer Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-6">Come Taste the Difference</h2>
+                <p class="text-gray-600 mb-8">Experience the perfect blend of tradition and taste at Pizza Paradise.</p>
+                <a href="menu.html" 
+                   class="inline-block bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition duration-300">
+                    View Our Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pizza Paradise</h3>
+                    <p class="text-gray-400">Serving delicious pizzas since 1995. Quality ingredients, amazing taste.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white">Order Now</a></li>
+                        <li><a href="track-order.html" class="text-gray-400 hover:text-white">Track Order</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +1 234 567 890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@pizzaparadise.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Pizza Street, NY 10001
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pizza Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
