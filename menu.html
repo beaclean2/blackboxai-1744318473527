@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Pizza Paradise</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-red-600">
+                    <a href="index.html">Pizza Paradise</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600">Home</a>
+                    <a href="menu.html" class="text-red-600 font-medium">Menu</a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600">Order</a>
+                    <a href="track-order.html" class="text-gray-600 hover:text-red-600">Track Order</a>
+                    <a href="about.html" class="text-gray-600 hover:text-red-600">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Login/Cart -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-red-600">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600 relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Section -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">Our Menu</h1>
+            
+            <!-- Filters -->
+            <div class="mb-8">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <!-- Category Filters -->
+                    <div class="flex space-x-2">
+                        <button class="category-filter bg-red-600 text-white px-4 py-2 rounded-full" data-category="all">
+                            All
+                        </button>
+                        <button class="category-filter bg-white text-gray-600 px-4 py-2 rounded-full hover:bg-red-600 hover:text-white" data-category="pizza">
+                            Pizzas
+                        </button>
+                        <button class="category-filter bg-white text-gray-600 px-4 py-2 rounded-full hover:bg-red-600 hover:text-white" data-category="sides">
+                            Sides
+                        </button>
+                        <button class="category-filter bg-white text-gray-600 px-4 py-2 rounded-full hover:bg-red-600 hover:text-white" data-category="drinks">
+                            Drinks
+                        </button>
+                    </div>
+                    
+                    <!-- Sort Options -->
+                    <select class="bg-white border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-600" id="sort-options">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Classic Margherita -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="pizza">
+                    <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg" 
+                         alt="Classic Margherita" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Classic Margherita</h3>
+                        <p class="text-gray-600 mb-4">Fresh tomatoes, mozzarella, basil, and our signature sauce</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$12.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(4.5)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Classic Margherita',
+                            price: '$12.99',
+                            image: 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pepperoni Supreme -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="pizza">
+                    <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" 
+                         alt="Pepperoni Supreme" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pepperoni Supreme</h3>
+                        <p class="text-gray-600 mb-4">Double pepperoni, extra cheese, and Italian herbs</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$14.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(5.0)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Pepperoni Supreme',
+                            price: '$14.99',
+                            image: 'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Veggie Paradise -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="pizza">
+                    <img src="https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg" 
+                         alt="Veggie Paradise" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Veggie Paradise</h3>
+                        <p class="text-gray-600 mb-4">Bell peppers, mushrooms, olives, onions, and fresh herbs</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$13.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(4.8)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Veggie Paradise',
+                            price: '$13.99',
+                            image: 'https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Garlic Bread -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="sides">
+                    <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg" 
+                         alt="Garlic Bread" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Garlic Bread</h3>
+                        <p class="text-gray-600 mb-4">Freshly baked bread with garlic butter and herbs</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$4.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(4.5)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Garlic Bread',
+                            price: '$4.99',
+                            image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Caesar Salad -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="sides">
+                    <img src="https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg" 
+                         alt="Caesar Salad" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Caesar Salad</h3>
+                        <p class="text-gray-600 mb-4">Fresh romaine lettuce, croutons, parmesan, and Caesar dressing</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$6.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(4.9)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Caesar Salad',
+                            price: '$6.99',
+                            image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Soft Drinks -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-category="drinks">
+                    <img src="https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg" 
+                         alt="Soft Drinks" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Soft Drinks</h3>
+                        <p class="text-gray-600 mb-4">Choice of Coca-Cola, Sprite, or Fanta (500ml)</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-red-600">$2.99</span>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-gray-600 ml-2">(4.7)</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart({
+                            name: 'Soft Drinks',
+                            price: '$2.99',
+                            image: 'https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg',
+                            quantity: 1
+                        })" class="w-full bg-red-600 text-white py-2 rounded-full hover:bg-red-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pizza Paradise</h3>
+                    <p class="text-gray-400">Serving delicious pizzas since 1995. Quality ingredients, amazing taste.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white">Order Now</a></li>
+                        <li><a href="track-order.html" class="text-gray-400 hover:text-white">Track Order</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +1 234 567 890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@pizzaparadise.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Pizza Street, NY 10001
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pizza Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Menu Page Specific JavaScript -->
+    <script>
+        // Category Filtering
+        document.querySelectorAll('.category-filter').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active state
+                document.querySelectorAll('.category-filter').forEach(btn => {
+                    btn.classList.remove('bg-red-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-600');
+                });
+                button.classList.remove('bg-white', 'text-gray-600');
+                button.classList.add('bg-red-600', 'text-white');
+
+                const category = button.dataset.category;
+                const items = document.querySelectorAll('.grid > div');
+
+                items.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sorting
+        document.getElementById('sort-options').addEventListener('change', (e) => {
+            const items = Array.from(document.querySelectorAll('.grid > div'));
+            const container = document.querySelector('.grid');
+
+            items.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.text-red-600').textContent.replace('$', ''));
+                const priceB = parseFloat(b.querySelector('.text-red-600').textContent.replace('$', ''));
+
+                if (e.target.value === 'price-low') {
+                    return priceA - priceB;
+                } else if (e.target.value === 'price-high') {
+                    return priceB - priceA;
+                } else {
+                    // Sort by rating for 'popular'
+                    const ratingA = parseFloat(a.querySelector('.text-gray-600.ml-2').textContent.replace('(', '').replace(')', ''));
+                    const ratingB = parseFloat(b.querySelector('.text-gray-600.ml-2').textContent.replace('(', '').replace(')', ''));
+                    return ratingB - ratingA;
+                }
+            });
+
+            // Clear and re-append sorted items
+            items.forEach(item => container.appendChild(item));
+        });
+    </script>
+</body>
+</html>
