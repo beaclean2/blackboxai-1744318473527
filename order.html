@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Pizza Paradise</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-red-600">
+                    <a href="index.html">Pizza Paradise</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600">Home</a>
+                    <a href="menu.html" class="text-gray-600 hover:text-red-600">Menu</a>
+                    <a href="order.html" class="text-red-600 font-medium">Order</a>
+                    <a href="track-order.html" class="text-gray-600 hover:text-red-600">Track Order</a>
+                    <a href="about.html" class="text-gray-600 hover:text-red-600">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Login/Cart -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-red-600">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600 relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Order Section -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">Your Order</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Shopping Cart -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h2 class="text-2xl font-bold mb-6">Shopping Cart</h2>
+                        
+                        <!-- Empty Cart Message -->
+                        <div id="empty-cart" class="text-center py-8">
+                            <i class="fas fa-shopping-cart text-gray-300 text-5xl mb-4"></i>
+                            <p class="text-gray-500">Your cart is empty</p>
+                            <a href="menu.html" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition duration-300">
+                                Browse Menu
+                            </a>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div id="cart-items" class="hidden">
+                            <!-- Sample Cart Item -->
+                            <div class="cart-item border-b border-gray-200 py-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg" 
+                                             alt="Pizza" 
+                                             class="w-20 h-20 object-cover rounded">
+                                        <div class="ml-4">
+                                            <h3 class="text-lg font-bold">Margherita Pizza</h3>
+                                            <p class="text-gray-600">Classic size</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="flex items-center mr-6">
+                                            <button class="quantity-btn bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                            <input type="number" value="1" min="1" class="w-12 text-center border-y border-gray-200 py-1">
+                                            <button class="quantity-btn bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                        </div>
+                                        <span class="text-xl font-bold text-red-600 mr-6">$12.99</span>
+                                        <button class="text-gray-400 hover:text-red-600">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-bold">$12.99</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Delivery Fee</span>
+                                <span class="font-bold">$2.99</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Tax</span>
+                                <span class="font-bold">$1.30</span>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4">
+                                <div class="flex justify-between">
+                                    <span class="text-lg font-bold">Total</span>
+                                    <span class="text-lg font-bold text-red-600">$17.28</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Information -->
+                        <div class="mt-8">
+                            <h3 class="text-lg font-bold mb-4">Delivery Information</h3>
+                            <form id="delivery-form" class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="address">Delivery Address</label>
+                                    <textarea id="address" name="address" required rows="3"
+                                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="notes">Delivery Notes (Optional)</label>
+                                    <textarea id="notes" name="notes" rows="2"
+                                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Payment Button -->
+                        <button id="checkout-btn" 
+                                class="w-full bg-red-600 text-white py-3 rounded-lg mt-6 hover:bg-red-700 transition duration-300">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pizza Paradise</h3>
+                    <p class="text-gray-400">Serving delicious pizzas since 1995. Quality ingredients, amazing taste.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white">Order Now</a></li>
+                        <li><a href="track-order.html" class="text-gray-400 hover:text-white">Track Order</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +1 234 567 890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@pizzaparadise.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Pizza Street, NY 10001
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pizza Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Order Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart items from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            updateCartDisplay(cart);
+
+            // Update quantity buttons
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input');
+                    const currentValue = parseInt(input.value);
+                    
+                    if (this.textContent === '+') {
+                        input.value = currentValue + 1;
+                    } else if (currentValue > 1) {
+                        input.value = currentValue - 1;
+                    }
+                    
+                    updateCartTotals();
+                });
+            });
+
+            // Form validation
+            document.getElementById('checkout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const form = document.getElementById('delivery-form');
+                
+                if (form.checkValidity()) {
+                    // Proceed with payment (M-Pesa integration would go here)
+                    alert('Proceeding to payment...');
+                } else {
+                    form.reportValidity();
+                }
+            });
+        });
+
+        function updateCartDisplay(cart) {
+            const emptyCart = document.getElementById('empty-cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+
+            if (cart.length === 0) {
+                emptyCart.classList.remove('hidden');
+                cartItems.classList.add('hidden');
+                cartCount.textContent = '0';
+            } else {
+                emptyCart.classList.add('hidden');
+                cartItems.classList.remove('hidden');
+                cartCount.textContent = cart.length.toString();
+                // Update cart items display
+                // This would populate the cart-items div with actual cart contents
+            }
+        }
+
+        function updateCartTotals() {
+            // Calculate and update cart totals
+            // This would update the subtotal, delivery fee, tax, and total
+        }
+    </script>
+</body>
+</html>
