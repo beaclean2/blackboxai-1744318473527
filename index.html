@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Paradise - Delicious Pizza Delivered to Your Door</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-red-600">
+                    <a href="index.html">Pizza Paradise</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-red-600 font-medium">Home</a>
+                    <a href="menu.html" class="text-gray-600 hover:text-red-600">Menu</a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600">Order</a>
+                    <a href="track-order.html" class="text-gray-600 hover:text-red-600">Track Order</a>
+                    <a href="about.html" class="text-gray-600 hover:text-red-600">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Login/Cart -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-red-600">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="order.html" class="text-gray-600 hover:text-red-600">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-20 md:pt-0">
+        <div class="relative h-screen max-h-[800px] flex items-center justify-center">
+            <div class="absolute inset-0">
+                <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg" 
+                     alt="Delicious Pizza" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="relative text-center text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Pizza Paradise</h1>
+                <p class="text-xl md:text-2xl mb-8">Crafting the Perfect Slice Since 1995</p>
+                <a href="order.html" 
+                   class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Sellers Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Top Sellers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pizza 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg" 
+                         alt="Margherita Pizza" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Margherita Supreme</h3>
+                        <p class="text-gray-600 mb-4">Fresh tomatoes, mozzarella, basil, and our secret sauce</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">$14.99</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" 
+                         alt="Pepperoni Pizza" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pepperoni Feast</h3>
+                        <p class="text-gray-600 mb-4">Double pepperoni, extra cheese, and Italian herbs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">$16.99</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg" 
+                         alt="Vegetarian Pizza" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Veggie Paradise</h3>
+                        <p class="text-gray-600 mb-4">Bell peppers, mushrooms, olives, and fresh herbs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">$15.99</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Steps Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Order in 3 Simple Steps</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-pizza-slice text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Choose Your Pizza</h3>
+                    <p class="text-gray-600">Select from our wide range of delicious pizzas and customize your toppings</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-credit-card text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Make Payment</h3>
+                    <p class="text-gray-600">Quick and secure payment with multiple payment options</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-truck text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Fast Delivery</h3>
+                    <p class="text-gray-600">Track your order in real-time as we deliver to your doorstep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Best pizza I've ever had! The crust is perfect and the toppings are always fresh."</p>
+                    <p class="font-bold">- John Smith</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Quick delivery and amazing taste! Their Margherita Supreme is out of this world."</p>
+                    <p class="font-bold">- Sarah Johnson</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Great value for money and excellent customer service. Will order again!"</p>
+                    <p class="font-bold">- Mike Davis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pizza Paradise</h3>
+                    <p class="text-gray-400">Serving delicious pizzas since 1995. Quality ingredients, amazing taste.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white">Order Now</a></li>
+                        <li><a href="track-order.html" class="text-gray-400 hover:text-white">Track Order</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +1 234 567 890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@pizzaparadise.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Pizza Street, NY 10001
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pizza Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
